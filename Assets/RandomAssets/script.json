@@ -1,0 +1,30 @@
+{
+  "dialogueNodes": [
+    {
+      "id": 0,
+      "text": "HEY!",
+	  "delayBetweenCharacters": 0.01,
+      "answers": [
+        {
+          "text": "...",
+          "next": 1
+        }
+      ]
+    },
+	{
+      "id": 1,
+      "text": " FEDE IS A PARACUUUUUUUUUUUUUUUUULO",
+	  "delayBetweenCharacters": 0.01,
+      "answers": [
+        {
+          "text": "Sorry...",
+          "next": 2
+        },
+        {
+          "text": "I must enter you",
+          "next": 3
+        }
+      ]
+    }
+  ]
+}
