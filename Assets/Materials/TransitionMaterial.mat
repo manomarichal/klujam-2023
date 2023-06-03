@@ -53,7 +53,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_400fb94fbe6f4f19b2c611cb2ba97db3_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 6c5e6d5da2c76144d83301cd8f958237, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9e0d102bddb645b685eaf1044434d680_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: da3c4074702c9764d96bad2f9cb4d1a2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9ee70ebb214e4501b8d5dcbbc7e3ae53_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: aa24b49249588fb4cb5bc226393e9ac3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a5bbd032ff2e4361ae20c08451e8a08d_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: da3c4074702c9764d96bad2f9cb4d1a2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_b6e232bbd9c745fa92f0e10e57dbe490_Texture_1_Texture2D:
@@ -79,6 +91,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
+    - _GlitchIntensity: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Transition: 0
