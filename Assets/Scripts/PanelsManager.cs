@@ -8,7 +8,7 @@ public class PanelsManager : MMSingleton<PanelsManager>
     [SerializeField] private GameObject[] panels;
     [SerializeField] private bool gameWasPlayed;
     [SerializeField] private GameObject dlcButton;
-    
+
     private void Start()
     {
         if (gameWasPlayed)
@@ -19,16 +19,6 @@ public class PanelsManager : MMSingleton<PanelsManager>
 
     public void OpenPanel(int index)
     {
-        for (int i = 0; i < panels.Length; i++)
-        {
-            if (i == index)
-            {
-                panels[i].SetActive(true);
-            }
-            else
-            {
-                panels[i].SetActive(false);
-            }
-        }
+        for (var i = 0; i < panels.Length; i++) panels[i].SetActive(i == index);
     }
 }
