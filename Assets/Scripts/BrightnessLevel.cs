@@ -1,19 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class BrightnessLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Volume volume;
+    [SerializeField] private Slider volumeSlider;
+
+    private ColorAdjustments _colorAdjustments;
+    private float brightnessValue;
+    private void Awake()
     {
-        
-        
+        if (volume.profile.TryGet(out _colorAdjustments))
+        {
+            volumeSlider.value = _colorAdjustments.contrast.value * -1;
+        }
+        volumeSlider.onValueChanged.AddListener(OnValueChanged);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnValueChanged(float arg0)
     {
-        
+        _colorAdjustments.contrast.value = arg0 * -1;
     }
 }
