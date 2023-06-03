@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Menu.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: be6b85412663e4ac28001ad3b77a55ac, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: b8e3273078e014a0f88bbed6705c9447, type: 2}
