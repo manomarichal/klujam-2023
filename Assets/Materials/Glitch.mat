@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5b4e639580700456ea52324458b4ad73, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -55,7 +55,7 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _GlitchInensity: 10
-    - _GlitchStrength: 0
+    - _GlitchStrength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
