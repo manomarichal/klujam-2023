@@ -8,9 +8,15 @@ public class PanelsManager : MMSingleton<PanelsManager>
     [SerializeField] private GameObject[] panels;
     [SerializeField] private bool gameWasPlayed;
     [SerializeField] private GameObject dlcButton;
-
+    
     private void Start()
     {
+        var gameFinished = PlayerPrefs.GetInt("GameFinished");
+        if (gameFinished == 1)
+        {
+            gameWasPlayed = true;
+        }
+        
         if (gameWasPlayed)
         {
             dlcButton.SetActive(true);
