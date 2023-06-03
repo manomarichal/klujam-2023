@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ButtonMaterial 1
+  m_Name: ButtonMat
   m_Shader: {fileID: -6465566751694194690, guid: 3179c45f712be094989e580fc31df0c3, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -39,28 +39,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_400fb94fbe6f4f19b2c611cb2ba97db3_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6c5e6d5da2c76144d83301cd8f958237, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_9e0d102bddb645b685eaf1044434d680_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: da3c4074702c9764d96bad2f9cb4d1a2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_9ee70ebb214e4501b8d5dcbbc7e3ae53_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: aa24b49249588fb4cb5bc226393e9ac3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 165a099e6ff435c47b0dad6d153244d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_a5bbd032ff2e4361ae20c08451e8a08d_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: da3c4074702c9764d96bad2f9cb4d1a2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_b6e232bbd9c745fa92f0e10e57dbe490_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 2faa540b5fc37604b8d41b17caf8ab57, type: 3}
+    - _Texture2DAsset_c477936a1725461d9c1f46aaa56b61c5_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: ad75973807367be4f9ff48008b80e2ed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainTex:
-        m_Texture: {fileID: 2800000, guid: 45d8594b6ee5c714eba60d5eb1e50b05, type: 3}
+        m_Texture: {fileID: 2800000, guid: ad75973807367be4f9ff48008b80e2ed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -78,17 +70,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _GlitchIntensity: 0.7
-    - _Intensity: 0
+    - _Intensity: 1
+    - _MoveIntensity: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Transition: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &6682515545667368116
+--- !u!114 &578160388684387129
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
