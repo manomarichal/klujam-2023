@@ -27,6 +27,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Co0ool:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -48,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_c477936a1725461d9c1f46aaa56b61c5_Out_0_Texture2D:
-        m_Texture: {fileID: 2800000, guid: ad75973807367be4f9ff48008b80e2ed, type: 3}
+        m_Texture: {fileID: 2800000, guid: 415198e09b8a678459cf6ee27d4cc217, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainTex:
-        m_Texture: {fileID: 2800000, guid: ad75973807367be4f9ff48008b80e2ed, type: 3}
+        m_Texture: {fileID: 2800000, guid: 415198e09b8a678459cf6ee27d4cc217, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -70,7 +74,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Intensity: 1
+    - _Intensity: 0
     - _MoveIntensity: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
