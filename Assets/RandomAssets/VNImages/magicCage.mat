@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTexture:
-        m_Texture: {fileID: 2800000, guid: 0a029c8e0707aca499bee86daa56141f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 71adc2472e9de4a4f8a35f80938da867, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainTex:
@@ -106,7 +106,7 @@ Material:
     - _GlitchIntensity: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Transition: 0
+    - _Transition: 0.00000067055225
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

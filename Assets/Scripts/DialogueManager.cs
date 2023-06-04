@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,6 +38,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject textBox;
     public SuperEpicMegaVisuaNovelMegaBackground bg;
     public float tSpeed = 0.01f;
+    public MMF_Player player;
 
     [Header("Visual Novel Images")] 
     public SpriteRenderer harutraining;
@@ -208,7 +210,7 @@ public class DialogueManager : MonoBehaviour
 
     private void doSpecificThingOnId(int id)
     {
-        
+
         List<int> changeBackgroundIds = new List<int>();
         changeBackgroundIds.AddRange(new List<int>
         {1,3,4,6});
@@ -287,7 +289,11 @@ public class DialogueManager : MonoBehaviour
         {
             id = currentNode.answers[optionIndex].next;
         }
-        
+        if (id == 999)
+        {
+            player.PlayFeedbacks();
+            return;
+        }
         doSpecificThingOnId(id);
         DialogueNode reply = getNodeByID(id);
         DisplayNode(reply);  
