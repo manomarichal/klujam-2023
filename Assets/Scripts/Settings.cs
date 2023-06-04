@@ -24,7 +24,7 @@ public class Settings : MonoBehaviour
         vsyncButton.onValueChanged.AddListener(onChangeVSync);
         graphicDropdown.onValueChanged.AddListener(onChangeGraphicPreset);
         antiAliasingDropdown.onValueChanged.AddListener(onChangeAntiAliasing);
-        motionBlurButton.onValueChanged.AddListener();
+        motionBlurButton.onValueChanged.AddListener(onChangeMotionBlur);
     }
 
     // Start is called before the first frame update
