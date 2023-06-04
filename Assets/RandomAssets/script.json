@@ -1,30 +1,88 @@
 {
   "dialogueNodes": [
     {
-      "id": 0,
-      "text": "HEY!",
-	  "delayBetweenCharacters": 0.01,
-      "answers": [
-        {
-          "text": "...",
-          "next": 1
-        }
-      ]
+		"id": 0,
+		"text": "Welcome, to a tale unknown to most.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 1,
+		"answers": []
     },
 	{
-      "id": 1,
-      "text": " FEDE IS A PARACUUUUUUUUUUUUUUUUULO",
-	  "delayBetweenCharacters": 0.01,
-      "answers": [
-        {
-          "text": "Sorry...",
-          "next": 2
-        },
-        {
-          "text": "I must enter you",
-          "next": 3
-        }
-      ]
+      	"id": 1,
+		"text": "We start at the Klagenfurt Quantum Game Academy,  an innovative, futuristic institution dedicated to game studies and engineering.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 2,
+		"answers": []
+    },
+	{
+		"id": 2,
+		"text": "Here young minds are not just prepared for the digital future, but are actively involved in shaping it, pushing the boundaries of the physical and digital realms.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 3,
+		"answers": []
+    },
+	{
+		"id": 3,
+		"text": "Because in this, virtual reality is more than simply a videogame in a pc.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 4,
+		"answers": []
+    },
+	{
+		"id": 4,
+		"text": "In this academy, a brilliant student named Haru is currently pursuing his dreams with his exceptional intellect.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 5,
+		"answers": []
+    },
+	{
+		"id": 5,
+		"text": "With his passion for gaming, a grand journey is outlined for him. ",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 6,
+		"answers": []
+    },
+	{
+		"id": 6,
+		"text": "One fateful day, during the exploration of an unknown digital world, Haru received a vision.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 7,
+		"answers": []
+    },
+	{
+		"id": 7,
+		"text": "Help me….. Please",
+		"delayBetweenCharacters": 1,
+		"nextId": 8,
+		"answers": []
+    },
+	{
+		"id": 8,
+		"text": "Accompanied by an image of a green creature, imprisoned in a magic circle.",
+		"delayBetweenCharacters": 0.5,
+		"nextId": 9,
+		"answers": []
+    },
+	{
+		"id": 9,
+		"text": "The creature was Gamebert, imprisoned by a vicious mage called Johan Huizinga.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 10,
+		"answers": []
+    },
+	{
+		"id": 10,
+		"text": "Along with his disciples, Felixus, Matthiatos, Reneah, and Marcaton, Huizinga was a tyrant who was holding Gamebert.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 11,
+		"answers": []
+    },
+	{
+		"id": 11,
+		"text": "“I need to save Gamebert”, Haru thought to himself.",
+		"delayBetweenCharacters": 0.01,
+		"nextId": 12,
+		"answers": []
     }
   ]
 }

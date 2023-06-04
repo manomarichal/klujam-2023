@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: T1
+  m_Name: magicCircleAppear
   m_Shader: {fileID: -6465566751694194690, guid: 17f1fc5625a68884588f5ef846a8c31c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FirstTexture:
-        m_Texture: {fileID: 2800000, guid: 6c0514498dd95b9489b9b7028dcf7438, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6b5b97cce88780149ac79b6dfa466afe, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTexture:
-        m_Texture: {fileID: 2800000, guid: fea535002dfb4db4c934cf2a6e6b1117, type: 3}
+        m_Texture: {fileID: 2800000, guid: f1cb789d5ccb17d48ba17b618e4162c0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainTex:
