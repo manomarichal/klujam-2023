@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,6 +38,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject textBox;
     public SuperEpicMegaVisuaNovelMegaBackground bg;
     public float tSpeed = 0.01f;
+    public MMF_Player player;
 
     [Header("Visual Novel Images")] 
     public SpriteRenderer harutraining;
@@ -208,10 +210,10 @@ public class DialogueManager : MonoBehaviour
 
     private void doSpecificThingOnId(int id)
     {
-        
+
         List<int> changeBackgroundIds = new List<int>();
         changeBackgroundIds.AddRange(new List<int>
-        {1,3,4,6});
+        {1,200,3,4});
         
         if (changeBackgroundIds.Contains(id))
         {
@@ -230,7 +232,12 @@ public class DialogueManager : MonoBehaviour
             Debug.Log(" d " + _spritesToDisappear[i].name);
         }
         List<SpriteRenderer> sprites = new List<SpriteRenderer>();
-        if (id == 5)
+        if (id == 3)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {introharu});
+        }
+        else if (id == 4)
         {
             sprites.AddRange(new List<SpriteRenderer>
                 {introharu});
@@ -238,14 +245,9 @@ public class DialogueManager : MonoBehaviour
         else if (id == 6)
         {
             sprites.AddRange(new List<SpriteRenderer>
-                {introharu});
-        }
-        else if (id == 8)
-        {
-            sprites.AddRange(new List<SpriteRenderer>
                 {magiccage, cagedbert});
         }
-        else if (id == 9)
+        else if (id == 7)
         {
             sprites.AddRange(new List<SpriteRenderer>
                 {evilhuizinga});
@@ -287,7 +289,11 @@ public class DialogueManager : MonoBehaviour
         {
             id = currentNode.answers[optionIndex].next;
         }
-        
+        if (id == 999)
+        {
+            player.PlayFeedbacks();
+            return;
+        }
         doSpecificThingOnId(id);
         DialogueNode reply = getNodeByID(id);
         DisplayNode(reply);  
