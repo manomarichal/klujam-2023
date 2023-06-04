@@ -213,7 +213,7 @@ public class DialogueManager : MonoBehaviour
 
         List<int> changeBackgroundIds = new List<int>();
         changeBackgroundIds.AddRange(new List<int>
-        {1,3,4,6});
+        {1,200,3,4});
         
         if (changeBackgroundIds.Contains(id))
         {
@@ -232,7 +232,12 @@ public class DialogueManager : MonoBehaviour
             Debug.Log(" d " + _spritesToDisappear[i].name);
         }
         List<SpriteRenderer> sprites = new List<SpriteRenderer>();
-        if (id == 5)
+        if (id == 3)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {introharu});
+        }
+        else if (id == 4)
         {
             sprites.AddRange(new List<SpriteRenderer>
                 {introharu});
@@ -240,14 +245,9 @@ public class DialogueManager : MonoBehaviour
         else if (id == 6)
         {
             sprites.AddRange(new List<SpriteRenderer>
-                {introharu});
-        }
-        else if (id == 8)
-        {
-            sprites.AddRange(new List<SpriteRenderer>
                 {magiccage, cagedbert});
         }
-        else if (id == 9)
+        else if (id == 7)
         {
             sprites.AddRange(new List<SpriteRenderer>
                 {evilhuizinga});

@@ -2,94 +2,87 @@
   "dialogueNodes": [
     {
 		"id": 0,
-		"text": "Welcome, to a tale unknown to most.",
+		"text": "In the previous chapter..",
 		"delayBetweenCharacters": 0.01,
 		"nextId": 1,
 		"answers": []
     },
 	{
-      	"id": 1,
-		"text": "We start at the Klagenfurt Quantum Game Academy,  an innovative, futuristic institution dedicated to game studies and engineering.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 2,
-		"answers": []
-    },
-	{
-		"id": 2,
-		"text": "Here young minds are not just prepared for the digital future, but are actively involved in shaping it, pushing the boundaries of the physical and digital realms.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 3,
-		"answers": []
-    },
-	{
-		"id": 3,
-		"text": "Because in this, virtual reality is more than simply a videogame in a pc.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 4,
-		"answers": []
-    },
-	{
-		"id": 4,
-		"text": "In this academy, a brilliant student named Haru is currently pursuing his dreams with his exceptional intellect.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 5,
-		"answers": []
-    },
-	{
-		"id": 5,
-		"text": "With his passion for gaming, a grand journey is outlined for him. ",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 6,
-		"answers": []
-    },
-	{
-		"id": 6,
-		"text": "One fateful day, during the exploration of an unknown digital world, Haru received a vision.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 7,
-		"answers": []
-    },
-	{
-		"id": 7,
-		"text": "Help me….. Please",
-		"delayBetweenCharacters": 0.1,
-		"nextId": 8,
-		"answers": []
-    },
-	{
-		"id": 8,
-		"text": "Accompanied by an image of a green creature, imprisoned in a magic circle.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 9,
-		"answers": []
-    },
-	{
-		"id": 9,
-		"text": "The creature was Gamebert.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 10,
-		"answers": []
-    },
-	{
-	  "id": 10,
-	  "text": "They were being imprisoned by a vicious mage called Johan Huizinga...",
+	  "id": 1,
+	  "text": "The Klagenfurt Quantum Game Academy, an innovative, futuristic institution dedicated to game studies and engineering.",
 	  "delayBetweenCharacters": 0.01,
-	  "nextId": 11,
+	  "nextId": 2,
 	  "answers": []
 	},
 	{
-		"id": 11,
-		"text": "Along with his disciples, Felixus, Matthiatos, Reneah, and Marcaton, Huizinga was a tyrant who was holding Gamebert.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 12,
-		"answers": []
-    },
+	  "id": 2,
+	  "text": "Here young minds are not just prepared for the digital future, but are actively involved in shaping it, pushing the boundaries of the physical and digital realms.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 200,
+	  "answers": []
+	},
 	{
-		"id": 12,
-		"text": "“I need to save Gamebert”, Haru thought to himself.",
-		"delayBetweenCharacters": 0.01,
-		"nextId": 13,
-		"answers": []
-    }
-  ]
+	  "id": 200,
+	  "text": "Because in that world the virtual realities are more than simply videogames on a computer.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 3,
+	  "answers": []
+	},
+	{
+	  "id": 3,
+	  "text": "In this academy, an exceptional intellect and brilliant student named Haru pursued his passion for gaming, oblivious to the grand journey destiny had laid out for him.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 4,
+	  "answers": []
+	},
+	{
+	  "id": 4,
+	  "text": "One fateful day, during the exploration of an unknown digital world, Haru received a vision.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 5,
+	  "answers": []
+	},
+	{
+	  "id": 5,
+	  "text": "\"Help me….. Please\"",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 6,
+	  "answers": []
+	},
+	{
+	  "id": 6,
+	  "text": "Accompanied by an image of a green creature, imprisoned in a magical cage.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 7,
+	  "answers": []
+	},
+	{
+	  "id": 7,
+	  "text": "The creature was Gamebert, imprisoned by a vicious mage called Johan Huizinga.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 8,
+	  "answers": []
+	},
+	{
+	  "id": 8,
+	  "text": "Along with his disciples, Felixus, Matthiatos, Reneah, and Marcaton, Huizinga was a tyrant who was holding Gamebert.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 9,
+	  "answers": []
+	},
+	{
+	  "id": 9,
+	  "text": "\"I need to save Gamebert”, Haru thought to himself.\"",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 10,
+	  "answers": []
+	},
+	{
+	  "id": 10,
+	  "text": "",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 999,
+	  "answers": []
+	}
+	]
 }
