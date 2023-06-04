@@ -210,7 +210,7 @@ public class DialogueManager : MonoBehaviour
 
         List<int> changeBackgroundIds = new List<int>();
         changeBackgroundIds.AddRange(new List<int>
-        {1,200,3,4});
+        {1,200,3,4,11,17});
         
         if (changeBackgroundIds.Contains(id))
         {
@@ -293,11 +293,6 @@ public class DialogueManager : MonoBehaviour
         {
             sprites.AddRange(new List<SpriteRenderer>
                 {haruwielding});
-        }
-        else if (id == 17)
-        {
-            sprites.AddRange(new List<SpriteRenderer>
-                {evilbert, haruwithout});
         }
         else
         {
