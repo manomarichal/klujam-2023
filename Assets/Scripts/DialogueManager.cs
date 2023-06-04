@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Visual Novel Images")] 
     public SpriteRenderer haruTraining;
     public SpriteRenderer magicCircle;
+    public SpriteRenderer evilHuizinga;
     
     private DialogueNodes nodes;
     private DialogueNode currentNode;
@@ -49,8 +50,9 @@ public class DialogueManager : MonoBehaviour
     private bool charAppearActive = false;
     private bool charDissapearActive = false;
     private List<SpriteRenderer> _spritesToAppear = new List<SpriteRenderer>();
-    private float count = 0;
-    private float dcount = 0;
+    private List<SpriteRenderer> _spritesToDisappear = new List<SpriteRenderer>();
+    private float count = 0f;
+    private float dcount = 1f;
 
     void Start()
     {
@@ -66,17 +68,20 @@ public class DialogueManager : MonoBehaviour
     {
         if (charDissapearActive)
         {
-            for (int i = 0; i < _spritesToAppear.Count; i++ )
+            for (int i = 0; i < _spritesToDisappear.Count; i++ )
             {
-                SpriteRenderer sr = _spritesToAppear[i];
-                sr.material.SetFloat("_Transition", count);
-                count -= tSpeed;
-                if (dcount <= 0)
-                {
-                    charDissapearActive = false;
-                    dcount = 1;
-                }  
+                SpriteRenderer sr = _spritesToDisappear[i];
+                sr.material.SetFloat("_Transition", dcount);
+                Debug.Log("dissapear " + sr.material.name + " " + dcount);
+
             }
+            dcount -= tSpeed;
+            if (dcount <= 0)
+            {
+                charDissapearActive = false;
+                _spritesToDisappear = new List<SpriteRenderer>();
+                dcount = 1f;
+            }  
         }
         if (charAppearActive)
         {
@@ -84,14 +89,14 @@ public class DialogueManager : MonoBehaviour
             {
                 SpriteRenderer sr = _spritesToAppear[i];
                 sr.material.SetFloat("_Transition", count);
-                Debug.Log(sr.material.name);
-                count += tSpeed;
-                if (count >= 1)
-                {
-                    charAppearActive = false;
-                    count = 0;
-                }  
+                Debug.Log("appear " + sr.material.name + " " + count);
             }
+            count += tSpeed;
+            if (count >= 1)
+            {
+                count = 0f;
+                charAppearActive = false;
+            }  
         }
         if (active && !is_writing)
         {
@@ -113,7 +118,7 @@ public class DialogueManager : MonoBehaviour
     
     void makeCharactersDissappear()
     {
-        charAppearActive = true;
+        charDissapearActive = true;
     }
     
     private DialogueNode getNodeByID(int id)
@@ -187,11 +192,7 @@ public class DialogueManager : MonoBehaviour
 
     private void doSpecificThingOnId(int id)
     {
-
-        if (_spritesToAppear.Count > 0)
-        {
-            makeCharactersDissappear();
-        }
+        
         List<int> changeBackgroundIds = new List<int>();
         changeBackgroundIds.AddRange(new List<int>
         {1,3,4,6});
@@ -200,15 +201,38 @@ public class DialogueManager : MonoBehaviour
         {
             bg.progressBackground();
         }
-        else if (id == 2)
+        
+        // characters
+        if (_spritesToAppear.Count > 0)
         {
-            List<SpriteRenderer> sprites = new List<SpriteRenderer>();
+            _spritesToDisappear = _spritesToAppear;
+            makeCharactersDissappear();
+        }
+        List<SpriteRenderer> sprites = new List<SpriteRenderer>();
+        if (id == 2)
+        {
             sprites.AddRange(new List<SpriteRenderer>
                 {haruTraining, magicCircle});
-            _spritesToAppear = sprites;
-            makeCharactersAppear();
         }
+        else if (id == 9)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {evilHuizinga});
+        }
+        else
+        {
+            _spritesToAppear = new List<SpriteRenderer>();
+            return;
+        }
+        _spritesToAppear = sprites;
+        Debug.Log(_spritesToAppear);
+        makeCharactersAppear();
         
+        
+        Debug.Log(_spritesToDisappear);
+        _spritesToAppear = sprites;
+        Debug.Log(_spritesToAppear);
+        makeCharactersAppear();
     }
     
     private void reply(int optionIndex)
