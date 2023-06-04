@@ -79,7 +79,56 @@
 	},
 	{
 	  "id": 10,
-	  "text": "",
+	  "text": "However, upon release, Gamebert began merging the digital and physical realities, causing widespread chaos. Gamebert defended his actions, claiming it was the only way to reach the promised land",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 11,
+	  "answers": []
+	},
+	{
+	  "id": 11,
+	  "text": "Gamebert was no innocent victim. They were the cause of what happened, where Huizinga, the supposed Tyrant, was actually a guardian trying to maintain the balance between the real and digital worlds.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 12,
+	  "answers": []
+	},
+	{
+	  "id": 12,
+	  "text": "Embroiled in guilt and a newfound sense of responsibility, Haru sought out Huzinga's disciples.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 13,
+	  "answers": []
+	},
+	{
+	  "id": 13,
+	  "text": "Contrary to Gamebert's assertions, the 4 disciples were not the worshipers of destruction but the guardians of a powerful artifact, the Magic Circle",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 14,
+	  "answers": []
+	},
+	{
+	  "id": 14,
+	  "text": "This device held the power to control digital data, maintaining the segregation between the physical and digital worlds.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 15,
+	  "answers": []
+	},
+	{
+	  "id": 15,
+	  "text": "Haru has been training under the guidance of the four disciples of Huizinga, who showed him how to become a true guardian of Eden.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 16,
+	  "answers": []
+	},
+	{
+	  "id": 16,
+	  "text": "Finally ready to face Gambert in what could be the clash that would decree the end of all reality or the salvation of all.",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 17,
+	  "answers": []
+	},
+	{
+	  "id": 17,
+	  "text": "\"I started this story, and only I can finish it... Now it is my turn, Gambert I will defeat you!\"",
 	  "delayBetweenCharacters": 0.01,
 	  "nextId": 999,
 	  "answers": []

@@ -43,24 +43,21 @@ public class DialogueManager : MonoBehaviour
     [Header("Visual Novel Images")] 
     public SpriteRenderer harutraining;
     public SpriteRenderer magiccircle;
-    public SpriteRenderer goodrene;
     public SpriteRenderer cagedbert;
-    public SpriteRenderer evilrene;
-    public SpriteRenderer Felixee;
-    public SpriteRenderer felixevil;
     public SpriteRenderer happybert;
     public SpriteRenderer haruwithout;
     public SpriteRenderer huizinga;
     public SpriteRenderer introharu;
     public SpriteRenderer magiccage;
+    public SpriteRenderer magiccagedissapear;
     public SpriteRenderer evilhuizinga;
-    public SpriteRenderer markato;
-    public SpriteRenderer markatoevil;
-    public SpriteRenderer matihas;
-    public SpriteRenderer mathiasevil;
     public SpriteRenderer haruwielding;
     public SpriteRenderer magicsphere2;
-    
+    public SpriteRenderer evilbert;
+    public SpriteRenderer dfriendly;
+    public SpriteRenderer denemy;
+    public SpriteRenderer sherewield;
+
     private DialogueNodes nodes;
     private DialogueNode currentNode;
     private bool active;
@@ -251,6 +248,56 @@ public class DialogueManager : MonoBehaviour
         {
             sprites.AddRange(new List<SpriteRenderer>
                 {evilhuizinga});
+        }
+        else if (id == 8)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {denemy, evilhuizinga});
+        }
+        else if (id == 9)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {haruwithout});
+        }
+        else if (id == 10)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {happybert, magiccagedissapear});
+        }
+        else if (id == 11)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {evilbert});
+        }
+        else if (id == 12)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {haruwithout});
+        }
+        else if (id == 13)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {dfriendly});
+        }
+        else if (id == 14)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {magicsphere2});
+        }
+        else if (id == 15)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {harutraining, magiccircle});
+        }
+        else if (id == 16)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {haruwielding});
+        }
+        else if (id == 17)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {evilbert, haruwithout});
         }
         else
         {
