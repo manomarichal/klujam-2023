@@ -4,24 +4,35 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Settings : MonoBehaviour
 {
     
+    [SerializeField] private PostProcessVolume postProcessing;
+    
     [SerializeField] private Toggle vsyncButton;
     [SerializeField] private TMP_Dropdown graphicDropdown;
     [SerializeField] private TMP_Dropdown antiAliasingDropdown;
+    [SerializeField] private Toggle motionBlurButton;
 
+    private MotionBlur _motionBlur;
+    
     private void Awake()
     {
         vsyncButton.onValueChanged.AddListener(onChangeVSync);
         graphicDropdown.onValueChanged.AddListener(onChangeGraphicPreset);
         antiAliasingDropdown.onValueChanged.AddListener(onChangeAntiAliasing);
+        motionBlurButton.onValueChanged.AddListener();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
+        postProcessing.profile.TryGetSettings(out _motionBlur);
+        
         string[] names = QualitySettings.names;
         foreach (var name in names)
         {
@@ -32,6 +43,7 @@ public class Settings : MonoBehaviour
 
         graphicDropdown.value = QualitySettings.GetQualityLevel();
         antiAliasingDropdown.value = QualitySettings.antiAliasing;
+        
     }
 
     // Update is called once per frame
@@ -56,4 +68,10 @@ public class Settings : MonoBehaviour
     {
         QualitySettings.antiAliasing = level;
     }
+
+    private void onChangeMotionBlur(bool active)
+    {
+        _motionBlur.active = active;
+    }
+    
 }
