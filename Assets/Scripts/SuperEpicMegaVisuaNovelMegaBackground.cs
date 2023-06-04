@@ -23,11 +23,6 @@ public class SuperEpicMegaVisuaNovelMegaBackground : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space") && _index < Materials.Count -1)
-        {
-            progressBackground();
-        }
-
         if (!active)
         {
             return;

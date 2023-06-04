@@ -19,6 +19,7 @@ public class DialogueNode
     public int id;
     public string text;
     public float delayBetweenCharacters;
+    public int nextId;
     public AnswerOption[] answers;
 }
 
@@ -34,14 +35,23 @@ public class DialogueManager : MonoBehaviour
     public TextAsset jsonFile;
     public TextMeshProUGUI text;
     public GameObject textBox;
-    
+    public SuperEpicMegaVisuaNovelMegaBackground bg;
+    public float tSpeed = 0.01f;
+
+    [Header("Visual Novel Images")] 
+    public SpriteRenderer haruTraining;
+    public SpriteRenderer magicCircle;
     
     private DialogueNodes nodes;
     private DialogueNode currentNode;
     private bool active;
     private bool is_writing;
-    private AudioSource music;
-    
+    private bool charAppearActive = false;
+    private bool charDissapearActive = false;
+    private List<SpriteRenderer> _spritesToAppear = new List<SpriteRenderer>();
+    private float count = 0;
+    private float dcount = 0;
+
     void Start()
     {
         nodes = JsonUtility.FromJson<DialogueNodes>(jsonFile.text);
@@ -49,14 +59,40 @@ public class DialogueManager : MonoBehaviour
         if (nodes == null) {Debug.Log("Json error");}
 
         textBox.SetActive(false);
-
-        music = GetComponent<AudioSource>();
-        music.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (charDissapearActive)
+        {
+            for (int i = 0; i < _spritesToAppear.Count; i++ )
+            {
+                SpriteRenderer sr = _spritesToAppear[i];
+                sr.material.SetFloat("_Transition", count);
+                count -= tSpeed;
+                if (dcount <= 0)
+                {
+                    charDissapearActive = false;
+                    dcount = 1;
+                }  
+            }
+        }
+        if (charAppearActive)
+        {
+            for (int i = 0; i< _spritesToAppear.Count;i++ )
+            {
+                SpriteRenderer sr = _spritesToAppear[i];
+                sr.material.SetFloat("_Transition", count);
+                Debug.Log(sr.material.name);
+                count += tSpeed;
+                if (count >= 1)
+                {
+                    charAppearActive = false;
+                    count = 0;
+                }  
+            }
+        }
         if (active && !is_writing)
         {
             checkForInput();
@@ -70,6 +106,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    void makeCharactersAppear()
+    {
+        charAppearActive = true;
+    }
+    
+    void makeCharactersDissappear()
+    {
+        charAppearActive = true;
+    }
+    
     private DialogueNode getNodeByID(int id)
     {
         foreach (var VARIABLE in nodes.dialogueNodes)
@@ -89,53 +135,22 @@ public class DialogueManager : MonoBehaviour
         currentNode = node;
         StartCoroutine(displayText());
     }
-
     
-
-    private void reply(uint optionIndex)
-    {
-        if (optionIndex >= currentNode.answers.Length)
-        {
-            return;
-        }
-
-        int id = currentNode.answers[optionIndex].next;
-        
-        // bad ending, restart scene
-        if (id == -1)
-        {
-            active = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        // good ending, end dialogue
-        else if (id == -2)
-        {
-            Destroy(textBox.gameObject);
-        }
-        // end game ending
-        else if (id == -3)
-        {
-            is_writing = false;
-            Destroy(textBox.gameObject);
-            
-        }
-        // succesful, goto next level
-        else
-        {
-            if (id == 2)
-            {
-                music.Play();
-            }
-            DialogueNode reply = getNodeByID(id);
-            DisplayNode(reply);  
-        }
-   
-    }
+    
     private void checkForInput()
     {
+        if (currentNode.answers.Length == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                reply(-1);
+            }
+            return;
+        }
+        // reply functionality
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            reply(0);
+            reply(-1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -158,6 +173,8 @@ public class DialogueManager : MonoBehaviour
             if (c != ' ') {yield return new WaitForSeconds(currentNode.delayBetweenCharacters);}
         }
         
+        
+        // display answers
         for (int i=0; i<currentNode.answers.Length;i++)
         {
             currentText += "\n  " + (i+1) + " - " + currentNode.answers[i].text;
@@ -165,5 +182,55 @@ public class DialogueManager : MonoBehaviour
 
         text.text = currentText;
         is_writing = false;
+        
+    }
+
+    private void doSpecificThingOnId(int id)
+    {
+
+        if (_spritesToAppear.Count > 0)
+        {
+            makeCharactersDissappear();
+        }
+        List<int> changeBackgroundIds = new List<int>();
+        changeBackgroundIds.AddRange(new List<int>
+        {1,3,4,6});
+        
+        if (changeBackgroundIds.Contains(id))
+        {
+            bg.progressBackground();
+        }
+        else if (id == 2)
+        {
+            List<SpriteRenderer> sprites = new List<SpriteRenderer>();
+            sprites.AddRange(new List<SpriteRenderer>
+                {haruTraining, magicCircle});
+            _spritesToAppear = sprites;
+            makeCharactersAppear();
+        }
+        
+    }
+    
+    private void reply(int optionIndex)
+    {
+        int id;
+        
+        if (optionIndex == -1)
+        {
+            // no replies, take next ID
+            id = currentNode.nextId;
+        }
+        else if (optionIndex >= currentNode.answers.Length)
+        {
+            return;
+        }
+        else
+        {
+            id = currentNode.answers[optionIndex].next;
+        }
+        
+        doSpecificThingOnId(id);
+        DialogueNode reply = getNodeByID(id);
+        DisplayNode(reply);  
     }
 }
