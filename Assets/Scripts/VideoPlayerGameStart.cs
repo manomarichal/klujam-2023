@@ -9,6 +9,8 @@ public class VideoPlayerGameStart : MonoBehaviour
     [SerializeField] private GameObject videoPlayerObject;
     [SerializeField] private GameObject virtualCamera1;
     [SerializeField] private GameObject virtualCamera2;
+    [SerializeField] private AudioSource sound;
+    
     
 
     private void Awake()
@@ -22,5 +24,6 @@ public class VideoPlayerGameStart : MonoBehaviour
         videoPlayerObject.SetActive(false);
         virtualCamera2.SetActive(false);
         virtualCamera1.SetActive(true);
+        sound.Play();
     }
 }
