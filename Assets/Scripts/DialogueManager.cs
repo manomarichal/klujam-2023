@@ -39,9 +39,25 @@ public class DialogueManager : MonoBehaviour
     public float tSpeed = 0.01f;
 
     [Header("Visual Novel Images")] 
-    public SpriteRenderer haruTraining;
-    public SpriteRenderer magicCircle;
-    public SpriteRenderer evilHuizinga;
+    public SpriteRenderer harutraining;
+    public SpriteRenderer magiccircle;
+    public SpriteRenderer goodrene;
+    public SpriteRenderer cagedbert;
+    public SpriteRenderer evilrene;
+    public SpriteRenderer Felixee;
+    public SpriteRenderer felixevil;
+    public SpriteRenderer happybert;
+    public SpriteRenderer haruwithout;
+    public SpriteRenderer huizinga;
+    public SpriteRenderer introharu;
+    public SpriteRenderer magiccage;
+    public SpriteRenderer evilhuizinga;
+    public SpriteRenderer markato;
+    public SpriteRenderer markatoevil;
+    public SpriteRenderer matihas;
+    public SpriteRenderer mathiasevil;
+    public SpriteRenderer haruwielding;
+    public SpriteRenderer magicsphere2;
     
     private DialogueNodes nodes;
     private DialogueNode currentNode;
@@ -71,8 +87,8 @@ public class DialogueManager : MonoBehaviour
             for (int i = 0; i < _spritesToDisappear.Count; i++ )
             {
                 SpriteRenderer sr = _spritesToDisappear[i];
-                sr.material.SetFloat("_Transition", dcount);
-                Debug.Log("dissapear " + sr.material.name + " " + dcount);
+                sr.sharedMaterial.SetFloat("_Transition", dcount);
+                //Debug.Log("dissapear " + sr.material.name + " " + dcount);
 
             }
             dcount -= tSpeed;
@@ -88,8 +104,8 @@ public class DialogueManager : MonoBehaviour
             for (int i = 0; i< _spritesToAppear.Count;i++ )
             {
                 SpriteRenderer sr = _spritesToAppear[i];
-                sr.material.SetFloat("_Transition", count);
-                Debug.Log("appear " + sr.material.name + " " + count);
+                sr.sharedMaterial.SetFloat("_Transition", count);
+                //Debug.Log("appear " + sr.material.name + " " + count);
             }
             count += tSpeed;
             if (count >= 1)
@@ -208,16 +224,31 @@ public class DialogueManager : MonoBehaviour
             _spritesToDisappear = _spritesToAppear;
             makeCharactersDissappear();
         }
+        
+        for (int i = 0; i < _spritesToDisappear.Count; i++ )
+        {
+            Debug.Log(" d " + _spritesToDisappear[i].name);
+        }
         List<SpriteRenderer> sprites = new List<SpriteRenderer>();
-        if (id == 2)
+        if (id == 5)
         {
             sprites.AddRange(new List<SpriteRenderer>
-                {haruTraining, magicCircle});
+                {introharu});
+        }
+        else if (id == 6)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {introharu});
+        }
+        else if (id == 8)
+        {
+            sprites.AddRange(new List<SpriteRenderer>
+                {magiccage, cagedbert});
         }
         else if (id == 9)
         {
             sprites.AddRange(new List<SpriteRenderer>
-                {evilHuizinga});
+                {evilhuizinga});
         }
         else
         {
@@ -233,6 +264,10 @@ public class DialogueManager : MonoBehaviour
         _spritesToAppear = sprites;
         Debug.Log(_spritesToAppear);
         makeCharactersAppear();
+        for (int i = 0; i < _spritesToAppear.Count; i++ )
+        {
+            Debug.Log(" aa" + _spritesToAppear[i].name);
+        }
     }
     
     private void reply(int optionIndex)
