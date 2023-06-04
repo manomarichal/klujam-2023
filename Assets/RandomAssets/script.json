@@ -2,7 +2,7 @@
   "dialogueNodes": [
     {
 		"id": 0,
-		"text": "In the previous chapter..",
+		"text": "Press space to continue...",
 		"delayBetweenCharacters": 0.01,
 		"nextId": 1,
 		"answers": []
