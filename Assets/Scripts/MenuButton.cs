@@ -14,6 +14,7 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] private float moveIntensity = 0.1f;
     [SerializeField] private Texture mainTexture;
     [SerializeField] private Shader buttonShader;
+    
     [Title("TextAnim")]
     [SerializeField] private Color colorOnHover = Color.white;
     [SerializeField] private Color colorOnExit = Color.black;
@@ -21,10 +22,10 @@ public class MenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private Image _img;
     private Material _localMaterial;
-    private static readonly int Intensity = Shader.PropertyToID("Intensity");
-    private static readonly int MainTex = Shader.PropertyToID("mainTex");
+    private static readonly int Intensity = Shader.PropertyToID("_Intensity");
+    private static readonly int MainTex = Shader.PropertyToID("_mainTex");
   
-    private static readonly int MoveIntensity = Shader.PropertyToID("MoveIntensity");
+    private static readonly int MoveIntensity = Shader.PropertyToID("_MoveIntensity");
 
 
     private void Awake()

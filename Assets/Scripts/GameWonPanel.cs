@@ -1,13 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using TMPro;
-using UniRx;
 using UnityEngine;
-using UnityEngine.InputSystem.Utilities;
 using UnityEngine.SceneManagement;
-using Observable = UniRx.Observable;
 
 public class GameWonPanel : MonoBehaviour
 {
@@ -15,25 +10,20 @@ public class GameWonPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mainMenuButtonText;
     [SerializeField] private MMF_Player textFeedback;
     [SerializeField] private float timerValue = 5;
+    [SerializeField] private AnimationFinishObserver animationFinishObserver;
 
 
     // TODO Add some animated shit here
     public void OpenAnimated()
     {
         gameWonPanel.SetActive(true);
-        StartTextAnimation();
+
+        animationFinishObserver.OnAnimationFinished += OnAnimationFinished;
     }
 
-    public void OnGoToMainMenuClick()
-    {
-        SceneManager.LoadSceneAsync("Menu");
-    }
-
-
-    public void StartTextAnimation()
-    {
-        StartCoroutine(CountdownTimer());
-    }
+    public void OnGoToMainMenuClick() => SceneManager.LoadSceneAsync("Menu");
+    private void OnAnimationFinished() => StartTextAnimation();
+    public void StartTextAnimation() => StartCoroutine(CountdownTimer());
 
     private IEnumerator CountdownTimer()
     {

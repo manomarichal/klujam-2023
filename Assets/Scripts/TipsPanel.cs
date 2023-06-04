@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using MoreMountains.Feedbacks;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class TipsPanel : MonoBehaviour
     [SerializeField] private float fadeOutDuration = 0.6f;
     [SerializeField] private float fadeInDuration = 0.4f;
     [SerializeField] private Ease fadeEase = Ease.InOutSine;
+    [SerializeField] private MMF_Player soundFeedbacks;
+    
 
     private int _tipsPanelCount;
     private int _currentPanel;
@@ -47,6 +50,7 @@ public class TipsPanel : MonoBehaviour
     public void MoveRight()
     {
         if (!_canPushButtons) return;
+        soundFeedbacks.PlayFeedbacks();
         _canPushButtons = false;
         if (_currentPanel < _tipsPanelCount - 1)
         {
@@ -65,6 +69,7 @@ public class TipsPanel : MonoBehaviour
     public void MoveLeft()
     {
         if (!_canPushButtons) return;
+        soundFeedbacks.PlayFeedbacks();
         _canPushButtons = false;
         if (_currentPanel > 0)
         {
