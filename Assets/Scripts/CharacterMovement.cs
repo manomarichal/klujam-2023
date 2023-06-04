@@ -6,7 +6,9 @@ public class CharacterMovement : MonoBehaviour
     public float moveSpeed = 5f;  // Adjust this to control the movement speed
     public float pushForce = 10f;  // Adjust this to control the force applied when pushing
     public Vector3 pushDirection = Vector3.forward;
-    private bool _canMove = true;
+    private bool _canMove = false;
+    
+    public void AllowMovement() => _canMove = true;
     private void Update()
     {
         if(!_canMove) return;
