@@ -106,7 +106,7 @@ Material:
     - _GlitchIntensity: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Transition: 0
+    - _Transition: 0.00000067055225
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
