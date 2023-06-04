@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: magicCircleAppear
+  m_Name: introHaru
   m_Shader: {fileID: -6465566751694194690, guid: 17f1fc5625a68884588f5ef846a8c31c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTexture:
-        m_Texture: {fileID: 2800000, guid: a8f6348b4171c2843bae236df869eac2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0a029c8e0707aca499bee86daa56141f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _mainTex:

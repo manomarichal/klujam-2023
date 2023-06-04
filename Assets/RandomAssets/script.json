@@ -52,36 +52,43 @@
 	{
 		"id": 7,
 		"text": "Help me….. Please",
-		"delayBetweenCharacters": 1,
+		"delayBetweenCharacters": 0.1,
 		"nextId": 8,
 		"answers": []
     },
 	{
 		"id": 8,
 		"text": "Accompanied by an image of a green creature, imprisoned in a magic circle.",
-		"delayBetweenCharacters": 0.5,
+		"delayBetweenCharacters": 0.01,
 		"nextId": 9,
 		"answers": []
     },
 	{
 		"id": 9,
-		"text": "The creature was Gamebert, imprisoned by a vicious mage called Johan Huizinga.",
+		"text": "The creature was Gamebert.",
 		"delayBetweenCharacters": 0.01,
 		"nextId": 10,
 		"answers": []
     },
 	{
-		"id": 10,
+	  "id": 10,
+	  "text": "They were being imprisoned by a vicious mage called Johan Huizinga...",
+	  "delayBetweenCharacters": 0.01,
+	  "nextId": 11,
+	  "answers": []
+	},
+	{
+		"id": 11,
 		"text": "Along with his disciples, Felixus, Matthiatos, Reneah, and Marcaton, Huizinga was a tyrant who was holding Gamebert.",
 		"delayBetweenCharacters": 0.01,
-		"nextId": 11,
+		"nextId": 12,
 		"answers": []
     },
 	{
-		"id": 11,
+		"id": 12,
 		"text": "“I need to save Gamebert”, Haru thought to himself.",
 		"delayBetweenCharacters": 0.01,
-		"nextId": 12,
+		"nextId": 13,
 		"answers": []
     }
   ]
