@@ -1,4 +1,5 @@
 using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -7,13 +8,16 @@ public class CharacterMovement : MonoBehaviour
     public float pushForce = 10f;  // Adjust this to control the force applied when pushing
     public Vector3 pushDirection = Vector3.forward;
     private bool _canMove = false;
+    [SerializeField] private MMF_Player haruFeedback1;
+    [SerializeField] private MMF_Player haruFeedback2;
+    
     
     public void AllowMovement() => _canMove = true;
     private void Update()
     {
         if(!_canMove) return;
         float horizontalInput = Input.GetAxis("Horizontal");  // Get input from the horizontal axis
-
+ 
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed;  // Create a movement vector based on input and speed
 
         transform.position += movement * Time.deltaTime;  // Move the character by modifying its position directly
@@ -26,9 +30,16 @@ public class CharacterMovement : MonoBehaviour
 
         // Check if the colliding object has a Rigidbody component
         if (otherRigidbody != null)
-        { 
-           
+        {
 
+            if (PlayerPrefs.GetInt("GameFinished") == 1)
+            {
+                haruFeedback2.PlayFeedbacks();
+            }
+            else
+            {
+                haruFeedback1.PlayFeedbacks();
+            }
             // Apply the pushing force to the object
             otherRigidbody.AddForce(pushDirection.normalized * pushForce, ForceMode.Impulse);
             _canMove = false;
